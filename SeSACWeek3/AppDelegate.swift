@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //런치스크린(앱이 실행되는 최초시점)부터 적용하겠다
+        //앞으로 뜨는 모든 화면의 텍스트필드에 글자크기 15, 배경 오렌지, 센터
+        UITextField.appearance().backgroundColor = .yellow
+        UITextField.appearance().font = .boldSystemFont(ofSize: 15)
+        UITextField.appearance().textAlignment = .center
+        
+        IQKeyboardManager.shared.isEnabled = true//모든 화면에 키보드 기능 적용함
+        
         return true
     }
 
